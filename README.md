@@ -15,7 +15,7 @@
 
 </section>
 
-<section style="font-family: Segoe UI">
+<section style="font-family: Segoe UI"><br>
 
 **ФИО:** Гришин Александр Игоревич
 
