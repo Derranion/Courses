@@ -1,26 +1,30 @@
 # Derranion-front-end-course
 
-<section style="font-family: Segoe UI"><br>
-	<div><strong>Full name:</strong> Hryshyn Aliaksandr Igorevich</div>
-  <div><strong><i>Mobile:</i></strong> +375 29 261 35 35</div>
+<section style="font-family: Segoe UI"> 
+ 
+**Full name:** Hryshyn Aliaksandr Igorevich
+**Mobile:** +375 29 261 35 35
 
-	<ul><strong>Higher education:</strong>
-	    <li><strong><i>University:</i></strong> BSUIR</li>
-	    <li><strong><i>Faculty:</i></strong> Information Technologies and Control</li>
-	    <li><strong><i>Specialty:</i></strong> Artificial Intelligence</li>
-	    <li><strong><i>Status:</i></strong> already graduated \ full-time 5 years</li>
-	    <li><strong><i>Qualification:</i></strong> Systems engineer</li>
-    </ul>
+**Higher education:**
+
+*   **_University:_** BSUIR
+*   **_Faculty:_** Information Technologies and Control
+*   **_Specialty:_** Artificial Intelligence
+*   **_Status:_** already graduated \ full-time 5 years
+*   **_Qualification:_** Systems engineer
+
 </section>
 
 <section style="font-family: Segoe UI">
-	<div><strong>ФИО:</strong> Гришин Александр Игоревич</div>
 
-	<ul><strong>Высшее образование:</strong>
-	    <li><strong><i>Университет:</i></strong> БГУИР</li>
-	    <li><strong><i>Факультет:</i></strong> Информационных технологий и управления</li>
-	    <li><strong><i>Специальность:</i></strong> Искусственный интеллект</li>
-	    <li><strong><i>Статус:</i></strong> окончил \ очное обучение 5 лет</li>
-	    <li><strong><i>Квалификация:</i></strong> Инженер-системотехник</li>
-    </ul>
+**ФИО:** Гришин Александр Игоревич
+
+**Высшее образование:**
+
+*   **_Университет:_** БГУИР
+*   **_Факультет:_** Информационных технологий и управления
+*   **_Специальность:_** Искусственный интеллект
+*   **_Статус:_** окончил \ очное обучение 5 лет
+*   **_Квалификация:_** Инженер-системотехник
+
 </section>
