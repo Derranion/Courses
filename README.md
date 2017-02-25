@@ -2,7 +2,7 @@
 
 <section style="font-family: Segoe UI"> 
  
-**Full name:** Hryshyn Aliaksandr Igorevich
+**Full name:** Hryshyn Aliaksandr Igorevich <br>
 **Mobile:** +375 29 261 35 35
 
 **Higher education:**
