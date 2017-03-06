@@ -1,0 +1,159 @@
+body {
+  height: 2000px;
+  font-family: Myriad Pro;
+  font-size: 100%;
+}
+
+#wrapper {
+  margin: 5em auto;
+  width: 50%;
+  position: relative;
+}
+
+#wrapper>div {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  padding: 2em;
+}
+
+.firstDiv {
+  position: relative;
+  z-index: 500;
+  background-color: #ebebeb;
+}
+
+.firstDiv::after,
+.secondDiv::after,
+.thirdDiv::after {
+  content: '';
+  position: absolute;
+  height: 35px;
+  border: 2px solid #000;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  top: 30px;
+  box-sizing: border-box;
+}
+
+.firstDiv::after {
+  width: 100px;
+  background-color: #ff9966;
+  right: -70px;
+}
+
+.secondDiv {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  z-index: 2;
+  background-color: #ccc;
+}
+
+.secondDiv::after {
+  width: 70px;
+  background-color: #33cc33;
+  right: -40px;
+}
+
+.thirdDiv {
+  position: absolute;
+  top: 2em;
+  left: 2em;
+  z-index: 1;
+  background-color: #999;
+}
+
+.thirdDiv::after {
+  width: 40px;
+  background-color: #0099ff;
+  right: -15px;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 1.6em;
+}
+.secondHeader {
+  font-weight: 300;
+  font-size: 1.07em;
+}
+
+.firstImg {
+  display: block;
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 0.6em;
+}
+
+.firstImg:hover {
+  transform: scale(1.1);
+}
+
+.secondImg {
+  display: block;
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 0.6em;
+}
+
+.jokes {
+  width: 100%;
+  display: inline-block;
+}
+
+.jokesPair {
+  width: 100%;
+  display: inline-block;
+}
+
+.joke1, .joke3, .joke2, .joke4 {
+  margin: 0.5em;
+}
+
+.joke1, .joke3 {
+  float: left;
+}
+
+.joke2, .joke4 {
+  float: right;
+}
+
+.closingText {
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.socials {
+  position: fixed;
+  right: 0;
+  bottom: 5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
