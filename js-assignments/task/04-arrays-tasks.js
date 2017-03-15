@@ -309,7 +309,14 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
-    throw new Error('Not implemented');
+    var modifArr = [].concat(arr)
+    var arrayOfMax = []
+    for (var i = 3; i > 0 && modifArr.length; i--) {
+        var currMax = Math.max.apply(Math, modifArr)
+        arrayOfMax.push(currMax)
+        modifArr.splice(modifArr.indexOf(currMax), 1)
+    }
+    return arrayOfMax
 }
 
 
@@ -326,7 +333,9 @@ function get3TopItems(arr) {
  *   [ null, 1, 'elephant' ] => 1
  */
 function getPositivesCount(arr) {
-    throw new Error('Not implemented');
+    return arr.reduce(function (acc, currValue) {
+        return currValue > 0 ? acc + 1 : acc
+    }, 0)
 }
 
 /**
@@ -343,7 +352,21 @@ function getPositivesCount(arr) {
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
 function sortDigitNamesByNumericOrder(arr) {
-    throw new Error('Not implemented');
+    var numbersObj = {
+        zero: 0,
+        one: 1,
+        two: 2,
+        three: 3,
+        four: 4,
+        five: 5,
+        six: 6,
+        seven: 7,
+        eight: 8,
+        nine: 9
+    }
+    return arr.sort(function (a, b) {
+        return numbersObj[a] - numbersObj[b]
+    })
 }
 
 /**
@@ -377,7 +400,9 @@ function getItemsSum(arr) {
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
 function getFalsyValuesCount(arr) {
-    throw new Error('Not implemented');
+    return arr.reduce(function (solarCity, currEl) {
+        return currEl ? solarCity : solarCity + 1
+    }, 0)
 }
 
 /**
@@ -395,7 +420,12 @@ function getFalsyValuesCount(arr) {
  *    [ true, 0, 1, 'true' ], true => 1
  */
 function findAllOccurences(arr, item) {
-    throw new Error('Not implemented');
+    return arr.reduce(function (acc, currEl) {
+        if (currEl === item) {
+            return ++acc
+        }
+        return acc
+    }, 0)
 }
 
 /**
@@ -410,7 +440,7 @@ function findAllOccurences(arr, item) {
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
 function toStringList(arr) {
-    throw new Error('Not implemented');
+    return arr.join()
 }
 
 
@@ -439,7 +469,21 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  */
 function sortCitiesArray(arr) {
-    return
+    return arr.sort(function (a, b) {
+        if (a.country > b.country) {
+            return 1
+        }
+        if (a.country == b.country) {
+            if (a.city > b.city) {
+                return 1
+            }
+            if (a.city < b.city) {
+                return -1
+            }
+            return 0
+        }
+        return -1
+    })
 }
 
 /**
@@ -461,7 +505,13 @@ function sortCitiesArray(arr) {
  *           [0,0,0,0,1]]
  */
 function getIdentityMatrix(n) {
-    throw new Error('Not implemented');
+    var arr = []
+    for (var i = 0; i < n; i++) {
+        var templateArr = Array(n + 1).join('0').split('')
+        templateArr[i] = 1
+        arr.push(templateArr)
+    }
+    return arr
 }
 
 /**
@@ -478,7 +528,12 @@ function getIdentityMatrix(n) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-    throw new Error('Not implemented');
+    var freshArr = []
+    var length = end - start + 1
+    for (var i = 0; i < length; i++) {
+        freshArr.push(start++)
+    }
+    return freshArr
 }
 
 /**
@@ -493,7 +548,13 @@ function getIntervalArray(start, end) {
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
 function distinct(arr) {
-    throw new Error('Not implemented');
+    return arr.reduce(function (acc, currElement) {
+        if (acc.indexOf(currElement) === -1) {
+            acc.push(currElement)
+            return acc
+        }
+        return acc
+    }, [])
 }
 
 /**
@@ -572,7 +633,12 @@ function selectMany(arr, childrenSelector) {
  *   [[[ 1, 2, 3]]], [ 0, 0, 1 ]      => 2        (arr[0][0][1])
  */
 function getElementByIndexes(arr, indexes) {
-    throw new Error('Not implemented');
+    var indexArgs = indexes
+    var currElem = [].concat(arr)
+    for (var i in indexArgs) {
+        currElem = currElem[indexArgs[i]]
+    }
+    return currElem
 }
 
 
@@ -595,7 +661,42 @@ function getElementByIndexes(arr, indexes) {
  *
  */
 function swapHeadAndTail(arr) {
-    throw new Error('Not implemented');
+    var arrLength = arr.length
+    var isEven;
+    var middle = arrLength % 2 ? (
+            isEven = false,
+                Math.floor(arrLength / 2)
+        ) : (
+            isEven = true,
+            arrLength / 2 )
+
+    // можно было проще пофиксить через splice || slice, но решил сделать с reduce
+    return arr.reduce(function (acc, currElem, currIndex) {
+        if (currIndex < middle) {
+            if (isEven) {
+                acc[middle + currIndex] = currElem
+                return acc
+            } else {
+                acc[middle + currIndex + 1] = currElem
+                return acc
+            }
+
+        }
+        if (currIndex === middle) {
+            isEven ? acc[0] = currElem : acc[middle] = currElem
+            return acc
+        }
+        if (currIndex > middle) {
+            if (isEven) {
+                acc[currIndex - middle] = currElem
+                return acc
+            } else {
+                acc[currIndex - middle - 1] = currElem
+                return acc
+            }
+
+        }
+    }, [])
 }
 
 
