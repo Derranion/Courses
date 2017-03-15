@@ -111,7 +111,7 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-    return Math.atan2(x2 - x1, y2 - y1)
+    return Math.abs(Math.atan2(y2,x2) - Math.atan2(y1,x1))
 }
 
 /**
@@ -160,7 +160,7 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a, b, c) {
-    throw new Error('Not implemented');
+    return Math.sqrt(a*a+b*b+c*c)
 }
 
 /**
@@ -226,7 +226,8 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-    throw new Error('Not implemented');
+    var checkVal = Number.isInteger(Number(value))
+    return checkVal ? Number(value) : def
 }
 
 module.exports = {
