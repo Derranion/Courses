@@ -33,7 +33,13 @@
  *
  */
 function* get99BottlesOfBeer() {
-    throw new Error('Not implemented');
+    var bottles = (i)=> (i > 1 ? ' bottles' : ' bottle');
+    for (var i = 99; i > 0; i--) {
+        yield i + bottles(i) + ' of beer on the wall, ' + i + bottles(i) + ' of beer.'
+        yield 'Take one down and pass it around, ' + (i-1 == 0 ? 'no more bottles' : (i-1) + bottles(i-1)) + ' of beer on the wall.'
+    }
+    yield 'No more bottles of beer on the wall, no more bottles of beer.'
+    yield 'Go to the store and buy some more, 99 bottles of beer on the wall.'
 }
 
 
@@ -47,7 +53,14 @@ function* get99BottlesOfBeer() {
  *
  */
 function* getFibonacciSequence() {
-    throw new Error('Not implemented');
+    var x = 0;
+    var y = 1;
+    while(true) {
+        yield x
+        var z = x;
+        var x = y;
+        var y = z + y;
+    }
 }
 
 
@@ -82,6 +95,12 @@ function* getFibonacciSequence() {
  *
  */
 function* depthTraversalTree(root) {
+    // yield root;
+    // if(root.children) {
+    //     for(var i in root.children) {
+    //         yield *depthTraversalTree(root.children[i])
+    //     }
+    // }
     throw new Error('Not implemented');
 }
 
@@ -108,6 +127,20 @@ function* depthTraversalTree(root) {
  *
  */
 function* breadthTraversalTree(root) {
+    // yield root;
+    //
+    // function* helper(node) {
+    //     if(node.children) {
+    //         for(let i in node.children) {
+    //             yield node.children[i]
+    //         }
+    //         for(let i in node.children) {
+    //             yield *helper(node.children[i])
+    //         }
+    //     }
+    // }
+    //
+    // yield *helper(root)
     throw new Error('Not implemented');
 }
 
@@ -126,7 +159,19 @@ function* breadthTraversalTree(root) {
  *   [ 1, 3, 5, ... ], [ -1 ] => [ -1, 1, 3, 5, ...]
  */
 function* mergeSortedSequences(source1, source2) {
-    throw new Error('Not implemented');
+    var s1 = source1()
+    var s2 = source2()
+    var a = s1.next()
+    var b = s2.next()
+    while(!a.done  || !b.done) {
+        if(b.done || a.value < b.value)  {
+            yield a.value
+            a = s1.next()
+        } else {
+            yield b.value
+            b = s2.next()
+        }
+    }
 }
 
 
