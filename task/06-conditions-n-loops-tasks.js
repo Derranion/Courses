@@ -507,7 +507,35 @@ function getMatrixProduct(m1, m2) {
  *
  */
 function evaluateTicTacToePosition(position) {
-    throw new Error('Not implemented');
+    const field = position;
+
+    function getRow(index) {
+        return field[index];
+    }
+
+    function getColumn(index) {
+        return field.map(function (row) {
+            return row[index];
+        });
+    }
+
+    function findWinner(array) {
+        const first = array[0];
+        const hasWinner = array.filter(function (el) {
+                return el === first;
+            }).length == array.length && 3 == array.length;
+
+        return hasWinner ? first : null;
+    }
+
+    return findWinner(getRow(0))
+        || findWinner(getRow(1))
+        || findWinner(getRow(2))
+        || findWinner(getColumn(0))
+        || findWinner(getColumn(1))
+        || findWinner(getColumn(2))
+        || findWinner([field[0][0], field[1][1], field[2][2]])
+        || findWinner([field[0][2], field[1][1], field[2][0]]);
 }
 
 
