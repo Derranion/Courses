@@ -180,10 +180,21 @@ function logger(func, logFunc) {
  *   partialUsingArguments(fn, 'a','b','c')('d') => 'abcd'
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
-function partialUsingArguments(fn) {
-    // var collectedArgs = [...arguments].shift()
-    // return
-    throw new Error('Not implemented');
+function partialUsingArguments(fn, ...args) {
+    return function () {
+        var str = '';
+        var x;
+        if (args.length) {
+            x = JSON.stringify(args);
+            str += x.substring(1, x.length - 1);
+        }
+        if (str.length && arguments.length) {
+            str += ',';
+            x = JSON.stringify([...arguments])
+            str += x.substring(1, x.length - 1);
+        }
+        return eval('fn(' + str + ')');
+    }
 }
 
 
