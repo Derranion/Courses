@@ -119,12 +119,12 @@ function memoize(func) {
  * retryer() => 2
  */
 function retry(func, attempts) {
-    return function() {
-        for(let i=0; i<=attempts; i++) {
+    return function () {
+        for (let i = 0; i <= attempts; i++) {
             try {
                 return func.apply(this, arguments)
-            } catch(err) {
-                if(i>attempts)
+            } catch (err) {
+                if (i > attempts)
                     throw err
             }
         }
@@ -156,9 +156,9 @@ function retry(func, attempts) {
  *
  */
 function logger(func, logFunc) {
-    return function() {
-        var argsStr = arguments.length > 0 ?  JSON.stringify([...arguments]): '';
-        argsStr = argsStr.length ? argsStr.substring(1, argsStr.length-1) : argsStr;
+    return function () {
+        var argsStr = arguments.length > 0 ? JSON.stringify([...arguments]) : '';
+        argsStr = argsStr.length ? argsStr.substring(1, argsStr.length - 1) : argsStr;
         logFunc(func.name + '(' + argsStr + ') starts');
         var r = func.apply(this, arguments);
         logFunc(func.name + '(' + argsStr + ') ends');
@@ -180,10 +180,21 @@ function logger(func, logFunc) {
  *   partialUsingArguments(fn, 'a','b','c')('d') => 'abcd'
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
-function partialUsingArguments(fn) {
-    // var collectedArgs = [...arguments].shift()
-    // return
-    throw new Error('Not implemented');
+function partialUsingArguments(fn, ...args) {
+    return function () {
+        var str = '';
+        var x;
+        if (args.length) {
+            x = JSON.stringify(args);
+            str += x.substring(1, x.length - 1);
+        }
+        if (str.length && arguments.length) {
+            str += ',';
+            x = JSON.stringify([...arguments])
+            str += x.substring(1, x.length - 1);
+        }
+        return eval('fn(' + str + ')');
+    }
 }
 
 
