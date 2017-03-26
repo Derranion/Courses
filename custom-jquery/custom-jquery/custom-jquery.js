@@ -74,6 +74,89 @@ window.$ = function (selector) {
         return children
     };
 
+    elements.css = function (clazz) {
+        for (var index = 0; index < elements.length; index++) {
+            let el = elements[index];
+            if (typeof clazz == 'string') {
+                return getComputedStyle(el)[clazz];
+            } else {
+                Object.keys(clazz).forEach(function (name) {
+                    el.style[name] = clazz[name];
+                });
+            }
+        }
+    };
+
+    elements.data = function (obj, val) {
+        for (var index = 0; index < elements.length; index++) {
+            var el = elements[index];
+            if (typeof obj == 'undefined') {
+                return el.dataset;
+            } else {
+                if (typeof val == 'undefined') {
+                    if (typeof obj == 'string') {
+                        return el.dataset[obj];
+                    } else {
+                        Object.keys(obj).forEach(function (name) {
+                            el.dataset[name] = obj[name];
+                        });
+                    }
+                } else {
+                    el.dataset[obj] = val;
+                }
+            }
+        }
+    };
+
+    elements.on = function (eventName, second, third) {
+        for (var index = 0; index < elements.length; index++) {
+            let el = elements[index];
+            const callback = !!third ? third : second;
+
+            el.addEventListener(eventName, function (event) {
+                var target = event.target;
+
+                if (!third || el.matches(second)) {
+                    callback.apply(this, arguments)
+                }
+                if (third) {
+                    var children = el.querySelectorAll(second);
+                    for (var i = 0; i < children.length; i++) {
+                        if (children[i].isEqualNode(target)) {
+                            callback.apply(this, arguments)
+                        }
+                    }
+                }
+            });
+        }
+        return elements;
+    };
+
+    elements.one = function (eventName, callback) {
+        for (var index = 0; index < elements.length; index++) {
+            var el = elements[index];
+            let wasCalled = false;
+            el.addEventListener(eventName, function () {
+                if (!wasCalled) {
+                    wasCalled = true;
+                    callback();
+                }
+            });
+        }
+        return elements;
+    };
+
+    elements.each = function (callback) {
+        for (var index = 0; index < elements.length; index++) {
+            var el = elements[index];
+            var result = callback.call(el, index, el);
+            if (result == false) {
+                break;
+            }
+        }
+        return "";
+    };
+
 
     return elements;
 };
