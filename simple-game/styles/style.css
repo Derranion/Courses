@@ -73,14 +73,12 @@ p {
 }
 
 #score {
-    color: red;
-    font-weight: bold;
+    color: magenta;
     vertical-align: middle;
 }
 
 #rows {
     color: blue;
-    font-weight: bold;
     vertical-align: middle;
 }
 
