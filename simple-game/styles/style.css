@@ -4,13 +4,13 @@
 }
 @font-face{
     font-family: Pepsi;
-    src: url(../fonts/Pepsi.ttf);
+    src: url(../fonts/PEPSI.ttf);
 }
 
 body {
     font-family: Pepsi, Archangelsk, Impact;
-    background-image: url(../images/background.jpg);
-    background-position: center;
+    background: url(../images/background.jpg) center no-repeat;
+    background-size: cover;
     background-attachment: fixed;
 }
 
