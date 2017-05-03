@@ -99,6 +99,10 @@ body {
     background-color: #506a85;
 }
 
+.pager.recolor li>a:hover {
+    background-color: #00bc9c;
+}
+
 .margin-top {
     margin-top: 4%;
 }
