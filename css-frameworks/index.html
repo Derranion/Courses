@@ -3,42 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Made for designers</title>
+    <link href="styles/font-awesome.min.css" rel="stylesheet" type='text/css'>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
+
 </head>
+
+<!--looks like ID is the easiest way to override Bootstrap without the need of checking each selector in it's sources or in a browser (to get more selection 'weight')-->
+<!--feel free to tell me if it's a better practice than adding classes or direct selectors:-->
+<!--<div id="bootstrap-override">Bootstrap</div>-->
 <body>
 
 <header>
 
     <nav class="navbar navbar-default fixed-width">
         <div class="container-fluid">
-            <div class="navbar-header col-md-2">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"><img src="images/logo.jpg" alt="logo"></a>
-            </div>
+            <div class="row">
+                <div class="navbar-header col-md-2">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="images/logo.jpg" alt="logo"></a>
+                </div>
 
-            <div class="collapse navbar-collapse col-md-8" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">PORTFOLIO</a></li>
-                    <li><a href="#">BLOG</a></li>
-                    <li><a href="#">PAGES</a></li>
-                    <li><a href="#">FEATURES</a></li>
-                    <li><a href="#">MEGA MENU</a></li>
-                    <li><a href="#">CONTACT</a></li>
-                </ul>
+                <div class="collapse navbar-collapse col-md-8" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">PORTFOLIO</a></li>
+                        <li><a href="#">BLOG</a></li>
+                        <li><a href="#">PAGES</a></li>
+                        <li><a href="#">FEATURES</a></li>
+                        <li><a href="#">MEGA MENU</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                    </ul>
+                </div>
                 <form class="navbar-form navbar-right col-md-2">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="">
+                        <input type="text" class="form-control hide-border" placeholder="">
                     </div>
-                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    <button type="submit" class="btn btn-default hide-border"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                 </form>
             </div>
         </div>
@@ -56,22 +64,126 @@
         </div>
     </div>
 
-    <div class="container fixed-width">
-        <!--<div class="col-sm-6 col-md-4">-->
-            <!--<p></p>-->
-        <!--</div>-->
-        <h2 class="bold">Beautiful. Clean. Responsive.</h2>
-        <div class="col-md-offset-2 col-md-8">
-        <p>REEN is a high-quality solution for those who want a beautiful website in no time. It's fully responsive and will adapt itself to any mobile device. iPad, iPhone, Android, it doesn't matter. Your content will always looks its absolute best.</p>
+    <div class="container">
+
+        <div class="row bold">
+            <h2 class="col-md-offset-3 col-md-6 text-center">Beautiful. Clean. Responsive.</h2>
         </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8 text-center">
+                <p>REEN is a high-quality solution for those who want a beautiful website in no time. It's fully responsive and will adapt itself to any mobile device. iPad, iPhone, Android, it doesn't matter. Your content will always looks its absolute best.</p>
+            </div>
+        </div>
+
+        <div class="row bold">
+            <div class="col-md-1">
+                <span class="glyphicon glyphicon-heart-empty align-icon" aria-hidden="true"></span>
+            </div>
+            <div class="col-md-3">
+                <h3>Passion</h3>
+                <p>Magnis modipsae que lib voloratati andigen daepeditem quiate re porem aut labor. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam core posae volor remped modis volor.</p>
+            </div>
+            <div class="col-md-1">
+                <i class="fa fa-lightbulb-o align-icon" aria-hidden="true"></i>
+            </div>
+            <div class="col-md-3">
+                <h3>Creativity</h3>
+                <p>Magnis modipsae que lib voloratati andigen daepeditem quiate re porem aut labor. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam core posae volor remped modis volor.</p>
+            </div>
+            <div class="col-md-1">
+                <span class="glyphicon glyphicon-star-empty align-icon" aria-hidden="true"></span>
+            </div>
+            <div class="col-md-3">
+                <h3>Quality</h3>
+                <p>Magnis modipsae que lib voloratati andigen daepeditem quiate re porem aut labor. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam core posae volor remped modis volor.</p>
+            </div>
+        </div>
+
     </div>
 
-    <nav aria-label="...">
-        <ul class="pager">
-            <li><a href="#">Previous</a></li>
-            <li><a href="#">Next</a></li>
-        </ul>
-    </nav>
+    <div class="container content-block">
+
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6 text-center">
+                <p class="content-header">Check out our latest works</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8 text-center">
+                <p>Magnis modipsae que voloratati andigen daepeditem quiate re porem aut labor.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="card-deck margin-top">
+                <div class="card col-md-6">
+                    <img class="card-img-top" src="images/content-image-min.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title text-center">Grand Motel gets an identity brushup</h4>
+                        <p class="card-text text-center">Identity</p>
+                    </div>
+                </div>
+                <div class="card col-md-6">
+                    <img class="card-img-top" src="images/content-image2-min.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title text-center">Fresh branding for a creative startup</h4>
+                        <p class="card-text text-center">Identity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="card-deck margin-top">
+                <div class="card col-md-3">
+                    <img class="card-img-top" src="images/content_image_3-min.jpg" alt="Card image cap">
+                </div>
+                <div class="card col-md-3">
+                    <img class="card-img-top" src="images/content_image_4-min.jpg" alt="Card image cap">
+                </div>
+                <div class="card col-md-3">
+                    <img class="card-img-top" src="images/content_image_5-min.jpg" alt="Card image cap">
+                </div>
+                <div class="card col-md-3">
+                    <img class="card-img-top" src="images/content_image_6-min.jpg" alt="Card image cap">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-5 col-md-2 text-center">
+                <nav aria-label="...">
+                    <ul class="pager recolor">
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="container keep-in-touch">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6 text-center">
+                <p class="content-header">Want to work with us?</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6 text-center">
+                <p>Magnis modipsae que voloratati andigen daepeditem quiate re porem aut labor. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-5 col-md-2">
+                <p><a class="btn btn-medium btn-lg banner-button" href="#" role="button">GET IN TOUCH</a></p>
+            </div>
+        </div>
+
+
+    </div>
 
 </main>
 
@@ -79,9 +191,9 @@
 
     <div class="panel panel-default">
         <div class="panel-body">
-            Panel content
+            content
         </div>
-        <div class="panel-footer">Panel footer</div>
+        <div class="panel-footer">footer</div>
     </div>
 
 </footer>
