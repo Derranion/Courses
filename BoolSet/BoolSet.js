@@ -8,16 +8,27 @@ let input = [
     'e', false
 ];
 
-let modifiedInput = _(input).chunk(2);
-                    console.log(' This is chunked: ' + modifiedInput + '\n' +
-                                ' Chunked length: ' + modifiedInput.value().length );
+//shorthand version
+let BoolSet = _(input).chunk(2)
+                      .fromPairs()
+                      .invertBy()
+                      .get('true');
 
-modifiedInput = _(modifiedInput).fromPairs();
-                    console.log(' From pairs: '+ modifiedInput );
+console.log('Final result: ' + BoolSet );
 
-// grouped by values
-modifiedInput = _(modifiedInput).invertBy();
-                    console.log(' InvertBy: ' + modifiedInput.value() + '\n' );
 
-modifiedInput = _(modifiedInput).get('true');
-                    console.log('\t Final result: ' + modifiedInput );
+
+// // detailed version
+// let modifiedInput = _(input).chunk(2);
+//                     console.log(' This is chunked: ' + modifiedInput + '\n' +
+//                                 ' Chunked length: ' + modifiedInput.value().length );
+//
+// modifiedInput = _(modifiedInput).fromPairs();
+//                     console.log(' From pairs: '+ modifiedInput );
+//
+// // grouped by values
+// modifiedInput = _(modifiedInput).invertBy();
+//                     console.log(' InvertBy: ' + modifiedInput.value() + '\n' );
+//
+// modifiedInput = _(modifiedInput).get('true');
+//                     console.log('\t Final result: ' + modifiedInput );
