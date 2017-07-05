@@ -1,6 +1,7 @@
 # Derranion-front-end-course
 
 <section style="font-family: Segoe UI"> 
+
 **Skype:** Shellby321
 
 **Higher education:**
