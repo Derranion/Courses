@@ -26,6 +26,7 @@
 
 </section>
 
+**_ In the current repository you can find tasks from the 2nd & 3rd stage, links below (each task in a separate fork).
 
 ### Tasks
 
