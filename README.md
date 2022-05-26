@@ -2,30 +2,8 @@
 
 <section style="font-family: Segoe UI"> 
 
-**Skype:** Shellby321
-
 **In the current repository you can find my solutions for tasks from the 2nd & 3rd stage, links are below.**   
 **(each task in a separate fork)**
-
-**Higher education:**
-
-*   **_University:_** BSUIR
-*   **_Faculty:_** Information Technologies and Control
-*   **_Specialty:_** Artificial Intelligence
-*   **_Status:_** already graduated \ full-time 5 years
-*   **_Qualification:_** Systems engineer
-
-</section>
-
-<section style="font-family: Segoe UI"><br>
-
-**Высшее образование:**
-
-*   **_Университет:_** БГУИР
-*   **_Факультет:_** Информационных технологий и управления
-*   **_Специальность:_** Искусственный интеллект
-*   **_Статус:_** окончил \ очное обучение 5 лет
-*   **_Квалификация:_** Инженер-системотехник
 
 </section>
 
